@@ -1,0 +1,29 @@
+@model IEnumerable<CRUDApp.Models.Book>
+
+@{
+    ViewData["Title"]="View Book";
+}
+    <div class="container">
+        <h1>Book List</h1>
+        <a href="/book/create">Create Book</a>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Name</th>
+                    <th>Author</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var book in Model)
+                {
+                    <tr>
+                        <td>@book.Id</td>
+                        <td>@book.Name</td>
+                        <td>@book.Author</td>
+                    </tr>
+                }
+               
+            </tbody>
+        </table>
+    </div>
